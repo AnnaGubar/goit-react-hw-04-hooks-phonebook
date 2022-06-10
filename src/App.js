@@ -33,12 +33,12 @@ function App() {
     if (existingContact) {
       alert(`${name} is already in contacts.`);
       console.log('уже есть, пропускаю');
-      setContacts([...contacts]);
     }
 
     if (!existingContact) {
       console.log('новый, создаю');
-      setContacts([createdContact, ...contacts]);
+      // setContacts([createdContact, ...contacts]);
+      setContacts(prevState => [createdContact, ...prevState]);
     }
   };
 
